@@ -25,10 +25,9 @@ def load_data(nrows):
     return df
 
 # Display data loading text
-data_load_state = st.write('Data loading, please wait')
 df = load_data(200000)
 metadata = load_metadata(200000)
-data_load_state.text("Data loading: Done!")
+
 
 # Title of app
 st.title('Please select an item from the sidebar')
@@ -168,8 +167,8 @@ st.write(clf_report)
 st.subheader("Displaying prediction model")
 st.write("Changing the components on the sidebar will change values of the" + '\n' +
 "plot however in this visulization we are only looking at the predicted Temp and Co2.")
-st.write("Yellow --- Predicted event")
-st.write("Purple --- Predicted Non-event")
+st.write("Purple --- Predicted event")
+st.write("Red --- Predicted Non-event")
 pca = PCA(10)
 X_projected = pca.fit_transform(X)
 x1 = X_projected[:, 8]
