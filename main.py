@@ -25,8 +25,10 @@ def load_data(nrows):
     return df
 
 # Display data loading text
+load_text = st.text('Data loading.....')
 df = load_data(200000)
 metadata = load_metadata(200000)
+load_text.text('Done loading data!')
 
 
 # Title of app
@@ -163,7 +165,7 @@ st.subheader("Displaying prediction model")
 st.write("Changing the components on the sidebar will change values of the" + '\n' +
 "plot however in this visulization we are only looking at the predicted Temp and Co2.")
 st.write("Purple --- Predicted event")
-st.write("Red --- Predicted Non-event")
+st.write("Red --- Predicted non-event")
 pca = PCA(10)
 X_projected = pca.fit_transform(X)
 x1 = X_projected[:, 8]
@@ -181,10 +183,10 @@ st.subheader('Sensor Metadata')
 if st.checkbox('Show raw metadata'):
     metadata.set_index("Unnamed: 0",inplace=True)
     st.dataframe(metadata,750,300)
-st.text('Here is the breakdown of events by type')
+st.text('Breakdown of events by type')
 st.text('Event --- Event occurs, this is the event we are looking to classify')
-st.text('Non_Event --- False flag, not the same type of event')
-st.text('Null_Event --- Iteration of non induction, nothing was added to the test enviorment')
+st.text('Non_event --- False flag, not the same type of event')
+st.text('Null_event --- Iteration of non induction, nothing was added to the test enviorment')
 
 # Create count chart of items
 counts = metadata['Description'].value_counts()
