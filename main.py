@@ -46,7 +46,7 @@ att_list = list(df.columns)
 event_name = st.sidebar.selectbox("Select item :", ids)
 
 # Create selection box for classifiers
-clf_name = st.sidebar.selectbox("Select classifier", ("KKN","SVM","Random Forest"))
+clf_name = st.sidebar.selectbox("Select classifier", ("KKN","Random Forest"))
 
 def get_event(event_name,df):
     event = df.loc[df['Id']== event_name]
@@ -111,9 +111,6 @@ def add_parameter_ui(clf_name):
     if clf_name == "KKN":
         K = st.sidebar.slider("K",1,15)
         params["K"] = K
-    elif clf_name == "SVM":
-        C = st.sidebar.slider("C", 0.01,10.0)
-        params["C"] = C
     else:
         max_depth = st.sidebar.slider("max_depth", 2,15)
         n_estimators = st.sidebar.slider("n_estimators",1,100)
@@ -126,8 +123,6 @@ params = add_parameter_ui(clf_name)
 def get_classifier(clf_name,params):
     if clf_name == "KKN":
         clf = KNeighborsClassifier(n_neighbors=params["K"])
-    elif clf_name == "SVM":
-        clf = SVC(C=params["C"])
     else:
       clf = RandomForestClassifier(n_estimators=params["n_estimators"], max_depth=params["max_depth"], random_state=1530)
     return clf
