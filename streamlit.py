@@ -25,7 +25,7 @@ def load_data(nrows):
     return df
 
 # Display data loading text
-data_load_state = st.text('Data loading, please wait')
+data_load_state = st.write('Data loading, please wait')
 df = load_data(200000)
 metadata = load_metadata(200000)
 data_load_state.text("Data loading: Done!")
