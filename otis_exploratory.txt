@@ -1,0 +1,23 @@
+Otis - Sensor Analytics
+
+How would otis use sensors?
+
+How and what kind of data (look at data dictionary)?
+
+Exploratry thinking --
+
+
+https://seleritysas.com/blog/2019/08/29/what-sensor-data-analytics-is-and-its-use-in-organisations/
+
+give insight into the current status of this device 
+
+draw tangible, relevant connections between huge data sets from different sources and formats and gain meaningful insights on traditional systems
+
+
+
+Faster anomoly technology - Thanks to sensor analytics, organisations can detect machine and device failures as soon as they happen, and takes pre-emptive maintenance measures to make sure the devices are functioning at full capacity
+
+Predictive maintenance - Thanks, to analytics, organisations can transform their production chain by pre-empting maintenance to make sure their supply chain operates at optimum capacity
+
+Considering all these factors, it becomes important to invest in an analytics platform that can stream and analyse data in real-time from different devices, which is why sensor data analytics is so important to business operations.
+
